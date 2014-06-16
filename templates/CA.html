@@ -1,0 +1,81 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true">
+
+   <ion-content has-header="true" padding="true">
+       <div ng-controller="ExampleCtrl">
+
+
+           <label id="date" class="item item-input">
+               <span  class="input-label" name='dateDeb '>Date Début</span>
+               <input ng-model="dateDeb" type="date">
+           </label>
+           <label id="dat" class="item item-input" >
+               <span  class="input-label"  name='dateFin'>Date Fin</span>
+               <input ng-model="dateFin" type="date">
+           </label>
+
+
+           <button id="confirm" class="button button-small button-calm" ng-click="ca()">Confirm</button>
+           <div id="bu">
+               <select   ng-model="selectedBu" ng-options="item as item.label for item in test">
+                   <option value="">Choisir</option>
+               </select>
+           </div>
+
+                <button id="zoomin" class="button button-small button-calm" ng-click="goToLink()">zoom In</button>
+           <button id="zoomout"  class="button button-small button-calm" ng-click="goToZoom()">zoom Out</button>
+
+           <nvd3-pie-chart
+                   data="test"
+                   id="exampleId"
+                   x="xFunction()"
+                   y="yFunction()"
+                   width="400"
+                   height="400"
+                   showLabels="true"
+                   pieLabelsOutside="false"
+                   showValues="true"
+                   showLegend="true"
+                   labelType="percent">
+               <svg></svg>
+           </nvd3-pie-chart>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+       </div>
+       <style>
+           #confirm{
+               float: right;
+               clear: both;
+               margin-right: 10px;
+               margin-top: -40px;
+           }
+           #date{
+               margin-top: 10px;
+               float: left;
+               height: 60px;
+               display: inline-block;
+           }
+           #dat{
+               display: inline-block;
+               height: 60px;
+               margin-left: 10px;
+               margin-top: 10px;
+               margin-bottom: 14px;
+           }
+           #zoomin{
+               margin-left: 220px;
+               margin-top: -30px;
+           }
+           #zoomout{
+               margin-top: -30px;
+
+           }
+           #bu{
+               width: 130px;
+               display: inline-block;
+               margin-right: 100px;
+               clear: both;
+           }
+       </style>
+   </ion-content>
+
+</ion-view>

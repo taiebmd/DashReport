@@ -1,0 +1,39 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+hide-back-button="true">
+
+	<ion-content has-header="true" padding="true">
+
+		<div  ng-controller="SalaireTalanCtrl">
+			<select id="bu" ng-model="selectedBu" ng-options="item as item.businessUnitDTO.label for item in allBu">
+				<option value="">Select BU</option>
+			</select>
+			<button id="confirm" class="button button-small button-calm" ng-click="showConfirm()">
+				Confirm
+			</button>
+
+			<nvd3-multi-bar-horizontal-chart
+			data="exampleData"
+			id="exampleId"
+			width="350"
+			height="550"
+			showLegend="true"
+			showXAxis="true"
+			showYAxis="true"
+			>
+				<svg></svg>
+			</nvd3-multi-bar-horizontal-chart>
+
+		</div>
+		<style>
+			#confirm {
+				clear: both;
+			}
+
+			#bu {
+				display: inline-block;
+				clear: both;
+			}
+		</style>
+	</ion-content>
+
+</ion-view>

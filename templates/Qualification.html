@@ -1,0 +1,83 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true">
+
+        <ion-tabs tabs-type="tabs-icon-only">
+                <ion-tab title="Home" icon-on="ion-arrow-graph-up-right" icon-off="ion-arrow-graph-up-right" ng-controller="QualiBUCtrl">
+                <ion-header-bar type="bar-positive" title="'Home'"></ion-header-bar>
+                <ion-content has-header="true">
+
+                    <div class="button-bar ">
+                        <a class="button button-clear button-positive ">Qualification Talan SAS</a>
+                    </div>
+
+
+                    <nvd3-multi-bar-horizontal-chart
+                            data="findProfils"
+                            id="exampleId"
+                            showXAxis="true"
+                            width="350"
+                            height="550"
+                            showYAxis="true"
+                            showLegend="true"
+                            >
+                        <svg></svg>
+                    </nvd3-multi-bar-horizontal-chart>
+                   </br></br>
+                </ion-content>
+            </ion-tab>
+            <ion-tab title="Home" icon-on="ion-stats-bars" icon-off="ion-stats-bars" >
+                <ion-header-bar type="bar-positive" title="'Home'"></ion-header-bar>
+                <ion-content has-header="true">
+                    <div class="button-bar ">
+                        <a class="button button-clear button-positive ">Qualification Bu</a>
+                    </div>
+                    <div ng-controller="QualiBUCtrl">
+                        <div class="list list-inset">
+                        <select id="bu" ng-model="selectedBu" ng-options="item as item.label for item in allBu">
+                        <option value="">Select BU</option>
+                          </select>
+                            <button id="confirm" class="button button-small button-calm" ng-click="dataBu()">Confirm</button>
+                       <!-- <a class="item item-icon-left" ng-click="goToLink()">
+                            <i class="icon ion-stats-bars"></i>
+
+                           Superposition des graphes
+                        </a>-->
+                            <button id="super" class="button button-small button-calm" ng-click="goToLink()">Superposition </button>
+                            </div>
+
+                        <nvd3-multi-bar-horizontal-chart
+                                data="findProfilsById"
+                                id="exampleId"
+                                showXAxis="true"
+                                showYAxis="true"
+                                showLegend="true"
+                                width="350"
+                                height="550"
+                                >
+                            <svg></svg>
+                        </nvd3-multi-bar-horizontal-chart>
+
+
+                  </br></br>
+                </div>
+                    <style>
+                        #bu {
+                            display:inline-block;
+                        }
+                        #confirm {
+                              display:inline-block;
+                              margin-left: 70px;
+                          }
+                        #super {
+                            display:inline-block;
+                            float: right;
+
+                        }
+                    </style>
+                </ion-content>
+            </ion-tab>
+
+
+        </ion-tabs>
+
+</ion-view>

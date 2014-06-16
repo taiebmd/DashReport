@@ -1,0 +1,76 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+hide-back-button="true" xmlns="http://www.w3.org/1999/html">
+
+	<ion-content has-header="true" padding="true">
+		<div ng-controller="rechercheController">
+
+			Id:
+			<input ng-model="Societe"  type="text" name="login">
+			Login:
+			<input ng-model="resource" type="text" name="login">
+			Resource:
+			<input ng-model="login" type="text" name="login">
+			<form>
+				Password:
+				<input type="password" ng-model="pass" name="pwd">
+			</form>
+
+			Active ?
+			<select id="actif" ng-model="actif">
+				<option value="">Yes</option>
+				<option value="">No</option>
+			</select>
+
+			<button class="button button-small button-calm" ng-click="add()">
+				Add
+			</button>
+			<div id="liste" class="list" ng-if="show" >
+
+				<a ng-click="go(task)" class="item item-icon-left" ng-repeat="task in user" ng-model="task"> <i class="icon ion-person"></i> <u> Ressource:</u> {{task.login}}
+				</br> <u> Login:</u>{{task.name}}
+				</br> <u> Socity: </u> {{task.login }} </a>
+
+			</div>
+		</div>
+
+		<style>
+			#liste {
+				display: inline-block;
+				margin-top: 20px;
+			}
+			#log {
+
+				/*display:block;*/
+				float: left;
+				width: 85%;
+				border: 2px solid #CCC;
+				margin-left: 5px;
+			}
+			#test {
+				width: 340px;
+				height: 60px;
+			}
+			#login {
+				float: left;
+				/*display:block;*/
+			}
+			#prenom {
+
+				display: inline-block;
+				clear: both;
+			}
+			#bu {
+
+				display: inline-block;
+				clear: both;
+			}
+			#actif {
+
+				display: inline-block;
+				clear: both;
+			}
+
+		</style>
+	</ion-content>
+
+</ion-view>

@@ -1,0 +1,118 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+          hide-back-button="true">
+
+    <ion-content has-header="true" padding="true">
+        <div ng-controller="CaPointCtrl">
+            <select id="bu" ng-model="selectedBu" ng-options="item as item.label for item in allBu" ng-click="buChanged()">
+                <option value="">Select BU</option>
+            </select>
+            <select id="soc" ng-model="SelectedSociete">
+                <option value="">TALAN SAS</option>
+            </select>
+            <select id="client" ng-model="SelectedClients" ng-options="item as item.prospectClientDTO.compteIntitule for item in customers" ng-click="ClientChanged()">
+                <option value="">Select Clients</option>
+            </select>
+            <select id="projet" ng-model="SelectedProjet" ng-options="item as item.label for item in projet" >
+                <option value="">Select Projet</option>
+            </select>
+
+            <label id="datedeb" class="item item-input">
+                <span class="input-label" name='dateDeb'>Date Fin</span>
+                <input ng-model="dateDeb" type="date">
+            </label>
+            <label id="dateFin" class="item item-input" >
+                <span class="input-label"  name='dateFin'>Date Debut</span>
+                <input ng-model=" dateFin" type="date">
+            </label>
+
+            <button id="confirm" class="button icon-right ion-chevron-right button-small button-calm" ng-click="showConfirm()">Liste</button>
+            <button id="chart" class="button icon-right ion-chevron-right button-small button-calm" ng-click="showChart()">Charts</button>
+            </br>
+
+            <nvd3-multi-bar-horizontal-chart
+                    data="chartCaVsEmpl"
+                    width="300"
+                    margin={left:140,top:0,bottom:50,right:0}
+                    height="350"
+                    id="exampleId"
+                    showXAxis="true"
+                    showLegend="true"
+                    showYAxis="true"
+                    >
+                <svg></svg>
+            </nvd3-multi-bar-horizontal-chart>
+
+            <div class="list">
+                <a ng-click="go(task)" class="item item-icon-left" ng-repeat="task in affaire" ng-model="task">
+                    <i class="icon ion-person"></i>
+                    <!--  <b><h4> </h4></b>-->
+                    <b><u> {{task.employee}}  :</u></b>
+                    </br>
+                    <u> Pv :</u> {{task.pv}}{{task.devise}}
+                    </br>
+                    <u> Pi :</u> {{task.pv}}{{task.devise}}
+                    </br>
+                    <u> Pv/Pm  :</u> {{task.ratioPvPm}}{{task.devise}}
+                    </br>
+                    <u> Pv/Pi  :</u> {{task.ratioPiPm}}{{task.devise}}
+                </a>
+            </div>
+
+        </div>
+        <style>
+            #projet{
+                float: left;
+                width: 170px;
+                margin-top: 2px;
+                display: inline-block;
+                clear: both;
+
+            }
+            #client{
+                width: 150px;
+                display: inline-block;
+                margin-left: 10px;
+                margin-top: 1px;
+            }
+            #soc{
+
+                display:inline-block;
+                margin-top: 20px;
+            }
+            #bu{
+
+                margin-top: 20px;
+                display:inline-block;
+                clear: both;
+            }
+            #datedeb{
+                margin-top: 5px;
+                float: right;
+                margin-right: 10px;
+                display: inline-block;
+                height: 60px;
+                width: 150px;
+            }
+            #dateFin{
+                display: inline-block;
+                height: 60px;
+                margin-top: 4px;
+                margin-bottom: 14px;
+
+            }
+            #confirm{
+                margin-left: 40px;
+
+                clear: both;
+                display: inline-block;
+            }
+            #chart{
+
+                margin-left: -1px;
+                display: inline-block;
+                clear: both;
+            }
+        </style>
+    </ion-content>
+
+</ion-view>

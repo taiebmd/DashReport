@@ -1,0 +1,81 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true">
+
+    <ion-tabs tabs-type="tabs-icon-only">
+        <ion-tab title="Home" icon-on="ion-arrow-graph-up-right" icon-off="ion-arrow-graph-up-right" ng-controller="SalaireTalanCtrl">
+            <ion-header-bar type="bar-positive" title="'Home'"></ion-header-bar>
+            <ion-content has-header="true">
+                <div class="button-bar ">
+                    <a class="button button-clear button-positive ">Salaire Talan SAS</a>
+                </div>
+                <div class="list list-inset">
+
+
+                    <nvd3-multi-bar-horizontal-chart
+                            data="findSalaire"
+                            id="exampleId"
+                            width="350"
+                            height="550"
+                            showXAxis="true"
+                            showYAxis="true"
+                            showLegend="true"
+                            >
+                        <svg></svg>
+                    </nvd3-multi-bar-horizontal-chart>
+                </div>
+                </br></br>
+            </ion-content>
+        </ion-tab>
+
+        <ion-tab title="About" icon-on="ion-stats-bars" icon-off="ion-stats-bars" ng-controller="SalaireTalanCtrl">
+            <ion-header-bar type="bar-positive" title="'Home'"></ion-header-bar>
+            <ion-content has-header="true">
+                <div class="button-bar ">
+                    <a class="button button-clear button-positive ">Salaire Bu</a>
+                </div>
+                <div ng-controller="SalaireTalanCtrl">
+                <div class="list list-inset">
+                    <select id="bu" ng-model="selectedBu" ng-options="item as item.label for item in allBu">
+                        <option value="">Select BU</option>
+                    </select>
+                    <button id="confirm" class="button button-small button-calm" ng-click="dataBu()">Confirm</button>
+                    <button id="super" class="button button-small button-calm" ng-click="goToLink()">Superposition </button>
+
+                </div>
+                    <nvd3-multi-bar-horizontal-chart
+                            data="findSalaireById"
+                            id="exampleId"
+                            width="300"
+                            height="500"
+                            showXAxis="true"
+                            showYAxis="true"
+                            showLegend="true"
+
+                            >
+                        <svg></svg>
+                    </nvd3-multi-bar-horizontal-chart>
+
+                </div>
+                <style>
+                    #bu {
+                        display:inline-block;
+                    }
+                    #confirm {
+                        display:inline-block;
+                        margin-left: 70px;
+                    }
+                    #super {
+                        display:inline-block;
+                        float: right;
+
+                    }
+                </style>
+            </ion-content>
+        </ion-tab>
+
+
+    </ion-tabs>
+
+
+
+</ion-view>

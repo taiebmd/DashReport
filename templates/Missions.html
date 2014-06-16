@@ -1,0 +1,51 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true" >
+
+			
+    <ion-content has-header="true" padding="true" >
+
+      <div ng-controller="MissionsController">
+
+          <select id="bu" ng-model="selectedBu" ng-options="item as item.label for item in allBu" ng-click="buChanged()">
+              <option value="">Select BU</option>
+          </select>
+
+          <select id="mang" ng-model="SelectedManag" ng-options="item as item.firstAndLastName for item in Clients">
+              <option value="">Select Manager</option>
+          </select>
+          <button id="confirm" class="button button-small button-calm" ng-click="showConfirm()">Valider</button>
+          </br>
+          <div id="gant" data="tasks" dhx-gantt style="height:300px; width:100%;">
+              <div gantt-column label="Task" style="width: 60%;">{{task.text | uppercase}}</div>
+              <div gantt-column align="center" width="200"  label="Duration">{{task.duration}}</div>
+             <!-- <div gantt-column-add width="80"></div>-->
+
+              <div gantt-template="task_text">
+                 {{task.text| uppercase}}
+              </div>
+          </div>
+      </div>
+        </br>
+        <img src="js/images/missions.png"  />
+        <style>
+            #gant {
+                margin-top: 20px;
+                display:inline-block;
+            }
+            #mang {
+                display:inline-block;
+            }
+            #confirm{
+
+                display:inline-block;
+                clear: both;
+            }
+
+        </style>
+    </ion-content>
+
+</ion-view>
+
+
+					
+					

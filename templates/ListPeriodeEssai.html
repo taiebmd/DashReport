@@ -1,0 +1,36 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true">
+    <ion-content has-header="true" padding="true">
+        <div ng-controller="ListPeriodeEssaiCtrl" class="list card">
+</br></br></br>
+            <div class="item item-avatar">
+                <img src="js/images/profile.jpg">
+                <p> {{detailPerson.firstName}} {{detailPerson.lastName}}</p>
+                <p> {{detailPerson.profil}} </p>
+            </div>
+
+            <div class="item item-body">
+
+                  <b><u> Date Embauche :</u></b>{{detailPerson.dateEmbauche}}
+                </br>
+                </br>
+                <b><u>Expérience Total :</u></b>{{detailPerson.experienceTotal}}
+                </br>
+                </br>
+                <b><u>Expérience Soc :</u></b>{{detailPerson.experienceSoc}}
+                </br> </br>
+                <b><u>Qualification :</u></b>{{detailPerson.qualification}}
+                </br> </br>
+                <b><u>Experience :</u></b>{{task.experienceTotal}}
+
+
+
+            </div>
+
+
+
+        </div>
+
+    </ion-content>
+
+</ion-view>

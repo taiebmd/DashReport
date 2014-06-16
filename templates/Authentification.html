@@ -1,0 +1,30 @@
+<ion-view title="navTitle"   right-buttons="rightButtons" >
+	<div has-header="true" padding="true">
+		</br></br></br>
+		<div class="list card">
+			</br></br></br>
+			<div ng-controller="UserCtrl">
+				<div class="item item-body">
+					<img class="full-image"  src="img/reporting-icon.png" height="45">
+				</div>
+
+				<div class="item item-body">
+					<div class="list">
+						<label class="item item-input"> <span class="input-label">Username</span>
+							<input type="text" ng-model="user.username" name="user" placeholder="Username or email">
+						</label>
+						<label class="item item-input"> <span class="input-label">Password</span>
+							<input type="password" ng-model="user.password" type="password" name="pass" placeholder="Password">
+						</label>
+					</div>
+					<div class="padding">
+						<button class="button button-block button-positive" ng-click="submit()">
+							Sign-In
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-view>

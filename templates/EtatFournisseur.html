@@ -1,0 +1,67 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+          hide-back-button="true" >
+
+    <ion-content has-header="true" padding="true">
+        <div ng-controller="EtatFournisseurController" >
+        <select ng-model="SelectedProvider" ng-options="item as item.providerCompanyName for item in Provider" ng-click="ProviderChanged()">
+            <option value="">Select Provider</option>
+        </select>
+
+        <select id="soc" ng-model="SelectedSociete">
+            <option value="">TALAN SAS</option>
+            <option value="">ASSET ALPHA</option>
+        </select>
+        <label id="date" class="item item-input">
+            <span class="input-label" name='dateFin'>Date Début</span>
+            <input ng-model="dateFin" type="date">
+        </label>
+        <label id="dat" class="item item-input" >
+            <span class="input-label"  name='dateDeb'>Date Fin</span>
+            <input ng-model="dateDeb" type="date">
+        </label>
+
+            <button id="confirm" class="button icon-right ion-chevron-right button-small button-calm" ng-click="showConfirm()">Valider</button>
+
+            <div class="list">
+
+                <a ng-click="go(task)" class="item item-icon-left" ng-repeat="task in founisseur" ng-model="task">
+                    <i class="icon ion-person"></i>
+                    <b> <u> Ref Contrat Founisseur:</u></b> {{task.ref}}
+                    </br>
+                    </b></u> Montant Fournisseur: {{task.montFourni}}</u></b> {{task.devise}}
+                    </br>
+                    </b></u> Montant Client: {{task.montClient}}</u></b> {{task.devise}}
+                </a>
+
+            </div>
+        </div>
+        <style>
+            #confirm{
+                float: right;
+                clear: both;
+                margin-right: 10px;
+                margin-top: -40px;
+            }
+            #soc{
+                margin-top: -35px;
+                margin-right: 40px;
+                float: right;
+                display: inline-block;
+            }
+            #date{
+                margin-top: 10px;
+                float: left;
+                height: 60px;
+                display: inline-block;
+            }
+            #dat{
+                display: inline-block;
+                height: 60px;
+                margin-left: 10px;
+                margin-top: 10px;
+                margin-bottom: 14px;
+            }
+        </style>
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,53 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+          hide-back-button="true" >
+       <div class="section" ng-controller="SortiesController" >
+
+                <label id="date" class="item item-input">
+                    <span class="input-label" name='dateFin'>Date Début</span>
+                    <input ng-model="dateDeb" type="date">
+                </label>
+                <label id="dat" class="item item-input" >
+                    <span class="input-label"  name='dateDeb'>Date Fin</span>
+                    <input ng-model="dateFin" type="date">
+                </label>
+
+
+                <button id="confirm" class="button button-small button-calm" ng-click="showConfirm()">Valider</button>
+                </br> </br>
+                <div class="list">
+
+                    <a ng-click="go(task)" class="item item-icon-left" ng-repeat="task in sorti">
+                        <i class="icon ion-person"></i>
+                        <h3> {{task.firstName}} {{task.lastName}}</h3>
+                        <p>"{{task.qualification}}". Exp:{{task.experienceTotal}}.</p>
+                        <p>Date de sortie: {{task.leavingDate}} <!--{{task.renouvele}}--></p>
+                    </a>
+
+                </div>
+
+        </div>
+    <style>
+    #date {
+    margin-top: 20px;
+    display:inline-block;
+    height: 60px;
+        margin-left: 20px;
+    border-color:darkgrey;
+    with: 150px;
+
+    }
+    #dat {
+    margin-top: 20px;
+    display:inline-block;
+
+    height: 60px;
+    border-color:darkgrey;
+    with: 150px;
+
+    }
+        #confirm {
+            margin-top: 35px;
+            margin-left: 30px;
+        }
+    </style>
+    </ion-view>

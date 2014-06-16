@@ -1,0 +1,35 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true" >
+
+    <ion-content has-header="true" padding="true" >
+	<div id="List" class="welcome-banniere">
+						<h4 style="display:inline;color:#253E93">
+						<br/>
+						<img src="js/images/profile.jpg"  />&nbsp;&nbsp;&nbsp;
+						<span style="font-size: small;color:#000;"> Bonjour </span>
+						Admin
+						</h4>
+						<h4> Resources Humaines</h4>
+						<div></div>
+						
+				</div>
+		<div ng-controller="testController">
+			<ion-list>
+				<ion-item ng-click="aller(item.link)" class="task item-icon-left item-icon-right" ng-repeat="item in customers">
+				<i ng-class="item.iconClass"></i>
+					{{item.text}}
+				</ion-item>
+
+			</ion-list>
+
+
+		</div>
+
+					<img src="js/images/stat.jpg" class="header-logo "  />
+		
+    </ion-content>
+</ion-view>
+
+
+					
+					

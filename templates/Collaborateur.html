@@ -1,0 +1,104 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true">
+
+    <ion-tabs tabs-type="tabs-icon-only">
+        <ion-tab title="Home" icon-on="ion-arrow-graph-up-right" icon-off="ion-arrow-graph-up-right" ng-controller="ColabCtrl">
+
+            <ion-header-bar type="bar-positive" title="'Home'"></ion-header-bar>
+
+            <ion-content has-header="true">
+
+                <div class="button-bar ">
+                    <a class="button button-clear button-positive ">Augmentation Salaire</a>
+                </div>
+                <div ng-controller="ColabCtrl">
+</br>
+                <b>Ressources :</b>
+
+                   <pre> <autocomplete id="complete" ng-model="a"  data="test" placeholder=".......... " ng-click="event()"></autocomplete></pre>
+
+                    <nvd3-line-plus-bar-chart
+                            data="exampleData"
+                            id="exampleId"
+                            margin="{left:100,top:20,bottom:230,right:100}"
+                            height="650"
+                            xAxisTickFormat="xAxisTickFormat()"
+                            y1AxisLabel="{{y1axislabeltext}}"
+                            y2AxisLabel="{{y2axislabeltext}}"
+                            y1AxisTickFormat="y1AxisTickFormat()"
+                            forceY="[0]"
+                            showLegend="true"
+                            legendWidth="200"
+                            legendHeight="100">
+                    </nvd3-line-plus-bar-chart>
+</div>
+            </ion-content>
+        </ion-tab>
+
+        <ion-tab title="About" icon-on="ion-stats-bars" icon-off="ion-stats-bars" >
+            <ion-header-bar type="bar-positive" title="'Home'"></ion-header-bar>
+            <ion-content has-header="true">
+                <div class="button-bar ">
+                    <a class="button button-clear button-positive ">Positionnement Salaire</a>
+                </div>
+                <div ng-controller="ColabCtrl">
+                <div class="list list-inset">
+                <select id="bu" ng-model="selectedBu" ng-options="item as item.businessUnitDTO.label for item in allBu" ng-click="buChanged()">
+                    <option value="">Select BU</option>
+                </select>
+
+                <select id="colab" ng-model="SelectedClients" ng-options="item as item.firstAndLastName for item in Clients" ng-click="colabChanged()">
+                    <option value="">Select Collaborateur</option>
+                </select>
+                </div>
+
+                    <nvd3-multi-bar-chart
+                            data="exampleData"
+                            id="showLegendExample"
+                            height="400"
+                            showXAxis="true"
+                            showYAxis="true"
+                            showLegend="true"
+                            >
+                        <svg></svg>
+                    </nvd3-multi-bar-chart>
+    </br>
+                    </br>
+                    </br>
+                    </div>
+
+
+                </div>
+
+                <style>
+                    #res {
+                        margin-bottom: 150px;
+                        display:inline-block;
+                        clear: both;
+                    }
+                    #bu{
+                        margin-top: 20px;
+                        display:inline-block;
+                        clear: both;
+                    }
+                    #colab{
+                        margin-top: 20px;
+                        display:inline-block;
+                        clear: both;
+                    }
+                    #complete{
+                        margin-bottom: 5px;
+                        width: 5px;
+                        height: 30px;
+                        display:inline-block;
+                        clear: both;
+                    }
+
+                </style>
+            </ion-content>
+        </ion-tab>
+
+
+    </ion-tabs>
+
+</ion-view>

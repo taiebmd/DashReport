@@ -1,0 +1,68 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true">
+
+    <ion-content has-header="true" padding="true">
+
+
+                <div ng-controller="MyCtrl1">
+
+                    <select id="bu" ng-model="selectedBu" ng-options="item as item.label for item in allBu" ng-click="buChanged()">
+                        <option value="">Select BU</option>
+                    </select>
+
+                    <select id="client" ng-model="SelectedClients" ng-options="item as item.prospectClientDTO.compteIntitule for item in customers">
+                        <option value="">Select Clients</option>
+                    </select>
+                    <label id="date" class="item item-input">
+                        <span class="input-label" name='dateDeb'>Date Début</span>
+                        <input ng-model="dateDeb " type="date">
+                    </label>
+                    <label id="dat" class="item item-input" >
+                        <span class="input-label"  name='dateFin'>Date Fin</span>
+                        <input ng-model="dateFin" type="date">
+                    </label>
+                    <button id="confirm" class="button icon-right ion-chevron-right button-small button-calm" ng-click="showConfirm()">Valider</button>
+
+                    <nvd3-discrete-bar-chart
+                            data="evolCa"
+                            width="350"
+                            height="500"
+                            showXAxis="true"
+                            showYAxis="true"
+                            showValues="true"
+                            showLegend="true"
+                            >
+                    </nvd3-discrete-bar-chart>
+</br></br>
+
+                </div>
+<style>
+    #bu{
+        display: inline-block;
+        clear: both;
+    }
+    #client{
+        display: inline-block;
+        width: 200px;
+        clear: both;
+    }
+    #date{
+        margin-top: 10px;
+        float: left;
+        height: 60px;
+        display: inline-block;
+    }
+    #dat{
+        display: inline-block;
+        height: 60px;
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 14px;
+    }
+    #confirm{
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+</style>
+    </ion-content>
+        </ion-view>

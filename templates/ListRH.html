@@ -1,0 +1,37 @@
+
+<ion-view title="navTitle" hide-back-button="true" left-buttons="left" right-buttons="rightButtons"
+          hide-back-button="true" >
+<div class="list card" ng-controller="ListRhCtrl">
+            </br></br></br>
+            <div class="item item-avatar">
+                <img src="js/images/profile.jpg">
+              </p> {{detailPerson.firstName}} {{detailPerson.lastName}} </p>
+                <p> {{detailPerson.qualification}}  </p>
+            </div>
+
+            <div class="item item-body">
+
+                  <b><u> Date Embauche  :</u></b>{{detailPerson.dateEmbauche}}
+                </br>
+                </br>
+                <b><u>Expérience Total :</u></b> {{detailPerson.experienceTotal}}
+                </br>
+                </br>
+                <b><u>Expérience Soc :</u></b> {{detailPerson.experienceSoc}}
+                </br> </br>
+                <b><u>Qualification  :</u></b>{{detailPerson.qualification}}
+                </br> </br>
+                <b><u>Anciennete Bu  :</u></b>{{detailPerson.ancienneteBu}}
+                </br> </br>
+                <b><u>Salaire  :</u></b>{{detailPerson.salaire}}{{detailPerson.devise}}
+                </br> </br>
+                <b><u>salaire Annuel  :</u></b>{{detailPerson.salaireAnnuel}}{{detailPerson.devise}}
+                </br> </br>
+                <b><u>Taux Frais  :</u></b>{{detailPerson.tauxFrais}}
+
+
+
+            </div>
+
+        </div>
+</ion-view>

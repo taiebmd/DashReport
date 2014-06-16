@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="Access-Control-Allow-Origin" content="*"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<title>mByblos dev </title>
+		
+		
+		<link rel="stylesheet"  href="js/jquery.mobile-1.3.0-rc.1.min.css" />
+		<!-- <link rel="stylesheet"  href="js/byblos01.css" /> -->
+		<link rel="stylesheet"  href="js/byblos01.min.css" /> 
+		<link rel="stylesheet" href="js/jquery.mobile.structure-1.3.0-rc.1.min.css" /> 
+		<link rel="stylesheet"  href="js/my.css" />
+		
+		<!--<link rel="stylesheet"  href="js/jqm-docs.css" /> -->
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.base64.min.js"></script>
+		<script src="js/jsrender.js"></script>
+		<script src="js/path.min.js"></script>
+		<script src="js/mvc/View.js"></script>
+		<script src="js/mvc/Model.js"></script>
+		<script src="js/mvc/Controller.js"></script>
+		<script src="js/my.js"></script>
+		<script src="js/App.js"></script>
+		<script src="js/jquery.mobile-1.3.0-rc.1.min.js"></script>
+		
+		
+
+		
+		
+	</head>
+	<body  >
+	
+	<div id="splash" data-role="page" style="width: 100%; height: 100%;text-align:center; ">  <img style="width: 100 px; height: 50px; margin-top: 50%" src="js/images/logo.png" >  </div>
+	<div id="default" data-role="page" style="width: 100%; height: 100%;text-align:center; ">  <h4 style="margin-top: 50%; margin-bottom: 50%"> mByblos: chargement... </h4>  </div>	
+	
+	
+	<!-- login page -->
+	<div id="connectionfrom" data-role="page"  style="height:100%;">
+	<div data-role="content" class="connectionfrom"  style="height:100%;">
+		<form id="loginform"  class="ui-body ui-body-b ui-corner-all boxshadow" method="post" style="padding-top: 0.5em;">
+			 <div id="logo" style="text-align: center;" ><img style="width: 100%;" src="js/images/talan-logo-l.jpg" /></div>
+				<div data-role="fieldcontain" class="ui-hide-label"  >
+					<label for="username"  >Nom d'utilisateur </label>
+					<input id="username" type="text" placeholder="Nom d'utilisateur" /> 
+				</div>
+				<div data-role="fieldcontain" class="ui-hide-label" >
+					<label for="password"  >Mot de passe </label>
+					<input id="password" type="password" placeholder="Mot de passe" /> 
+				</div>
+				<a  id="btnconnexion" data-role="button" data-theme="b" style="margin-top: 2em">Connexion</a>
+				<div id="#loginerror"><p  style="text-align: center; color: red;margin-bottom: 0; margin-top: 0">erreur login, verifier votre login et mot de passe </p></div>
+				<div id="#notfounderror"><p  style="text-align: center; color: red;margin-bottom: 0; margin-top: 0">connexion au serveur impossible </p></div>
+		
+			
+		</form>
+	</div>
+	</div>
+	<!-- /login page -->
+			
+			
+		<!-- main -->
+		<div id="main" data-role="page" >
+		
+		
+			<div  data-theme="d" data-role="header"  data-position="fixed"  >
+				<div style="text-align: center;">
+					<div>
+					<img src="js/images/logoTalanMini.png" class="header-logo "  /> <h3 style="margin: 0 auto;display:inline-block; font-family: BubbleBoy2" class="header-text"> mbyblos </h3>
+					</div>	
+				</div>
+				<a id ="menu" href="#nav-panel" data-icon="bars" data-iconpos="notext" data-role="button" data-theme="d" >Menu</a>
+				<a  href="#/home" data-icon="home" data-iconpos="notext" id="homebutton">Home</a>
+			</div><!-- /header -->
+			
+			
+			<!-- Panel Menu -->
+				<div id="nav-panel" data-role="panel" data-position="left" data-position-fixed="true" data-display="reveal"  data-theme="d">
+					
+					<ul data-role="listview"  data-theme="d" data-inset="false">
+						<li>
+							<div id="panel-user-profile" style="display:table-cell;vertical-align: middle">
+							<!-- <img src="js/images/profile.jpg" class="profilepic" /> <div style="float:right">  <h3 > Flen Fouleni  </h3> </div> -->
+							</div>
+						</li>
+					</ul>
+					
+					<div data-role="collapsible-set" data-inset="false" data-theme="d" data-content-theme="d"  >
+					<div data-role="collapsible" data-iconpos="right"  >
+					<h2> Ressources Humaines </h2>
+						<ul data-role="listview" data-mini="true"  >
+							<li><a href="#/mes-conges" 			 class="panel-collaps-button one-edge-top-shadow" ><span> Mes congés  </a></li>
+							<li><a href="#/consulter-demandes" 	 class="panel-collaps-button one-edge-bottm-shadow"> <span>Consulter les demandes </span></a></li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-iconpos="right" >
+					<h2  > Missions </h2>
+						<ul data-role="listview" data-mini="true"  >
+							<li  ><a href="#/gerer-missions"  class="panel-collaps-button one-edge-top-shadow" ><span> Gérer les missions</span>  </a></li>
+							<li  ><a href="#/gerer-frais" class="panel-collaps-button" ><span> Gérer les frais</span> </a></li>
+							<li  ><a href="#/gerer-cras"  class="panel-collaps-button one-edge-bottm-shadow"  > <span>CRAs</span> </a></li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-iconpos="right" style="padding-bottom: 6px;">
+					<h2  > Facturation </h2>
+						<ul data-role="listview" data-mini="true"  >
+							<li  ><a href="#/gerer-facture"  class="panel-collaps-button one-edge-top-shadow" ><span> Gérer les factures</span>  </a></li>
+							<li  ><a  href="#/cloturer-mois" class="panel-collaps-button one-edge-bottm-shadow" ><span> clôturer des mois de facturation</span> </a></li>
+							
+						</ul>
+					</div>
+					</div>
+					
+					
+					<ul data-role="listview" data-theme="d" data-divider-theme="d"  >
+
+						<li data-icon="delete" style="background-color:#111;">
+							<a href="#/deconnexion"  data-rel="popup" data-position-to="window" data-transition="pop" >Déconnexion</a>
+						</li>
+
+					</ul> 
+					
+
+			</div> <!-- Panel -->
+			
+			<!-- Dialog deconnexion -->
+			<div data-dismissible="false"  id="deconnexion" data-theme="d" data-role="popup" data-overlay-theme="a" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+						<h3>Deconnexion</h3>
+						
+						<a href="#/deconnexion-oui" data-role="button"  data-theme="d" data-icon="check" data-inline="true" data-mini="true">Déconnexion</a>
+						<a onClick="back() "data-role="button" data-rel="back" data-inline="true" data-icon="delete"  data-mini="true" data-theme="d"  >Annuler</a>
+			</div>	
+			
+			<!-- container of all pages loaded -->
+			<div id="container" data-role="content" style="padding-left: 0.2em; padding-right: 0.2em;" >
+			<p> something wrong happened ! </p>
+			</div>
+			
+
+				
+		</div><!-- /main 1 -->
+
+ 
+ 
+		<!-- page 1 -->
+		<div data-role="page" id="page1" >
+			<!-- ###################### Content ########################################## -->
+				<div id='user-view'  class="welcome-banniere">
+				</div>
+				
+				<div id="collaps-set" data-theme="h" data-content-theme="d" data-inset="true">
+					<!-- auto generated collapses goes here -->	
+				</div><!-- collapsible-set -->
+		</div>
+		
+
+		<!-- ######################### DEMANDES ####################### -->
+		<!-- mes conges -->
+		<div id="mes-conges" data-role="page"     >
+			
+				<div data-role="navbar"  id="mes-conges-navbar" data-inset="false">
+					<ul data-theme="d">
+					<li><a  id="mes-conges-encours-tab" data-theme="d" >En cours</a></li>
+					<li><a  id="mes-conges-historique-tab" data-theme="d" >Historique</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			<div id="mes-conges-encours" >
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			<div id="mes-conges-history" >
+				<p style="text-align:center"> chargement...</p>
+			</div>	
+		</div><!-- /consulter les demandes -->
+		
+		<!-- consulter les demandes -->
+		<div id="consulter-demandes" data-role="page"     >
+			
+				<div data-role="navbar"  id="consulter-demandes-navbar" data-inset="false">
+					<ul data-theme="d">
+					<li><a  id="consulter-demandes-avalider-tab" data-theme="d" class="ui-btn-active">à valider</a></li>
+					<li><a  id="consulter-demandes-encours-tab" data-theme="d" >En cours</a></li>
+					<li><a  id="consulter-demandes-historique-tab" data-theme="d" >Historique</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			<div  id="consulter-demande-avalider" >	
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			<div id="consulter-demande-encours" >
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			<div id="consulter-demande-history" >
+				<p style="text-align:center"> chargement...</p>
+			</div>	
+		</div><!-- /consulter les demandes -->
+		
+		<!-- page affichage demande -->
+	<div  id="demande" data-theme="d" data-role="page" style="width: 100%"  data-overlay-theme="a" >
+		<div data-role="header" data-theme="d" >
+			 <div style="text-align: center;padding: 0.6em;"> <span id="demande-header-title">Demande de congé</span> </div>
+			 <a id ="demande-back" onclick="back(true)"data-icon="back" data-iconpos="notext" data-role="button" data-theme="d" >retour</a>
+			 <a id="show-demande-workflow-panel" href="#demande-workflow" data-icon="grid" data-iconpos="notext" class="ui-icon-alt">Workflow</a>
+		</div><!-- /header --> 
+		<div data-role="content" id="demande-content">
+			
+						
+		</div>	<!--/ content -->
+		
+		<!-- popus -->
+		<div  id="valider-dialog" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+				
+		</div>
+		<div  id="refuser-dialog" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+			
+		</div>
+		<div  id="delete-dialog" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+			
+		</div>
+	
+		<!-- workflow panel -->
+		<div id="demande-workflow" data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay"  data-theme="d">
+		
+		</div>
+	</div><!-- / Demande -->
+		
+	<!-- #################### MISSIONS ########################"" -->
+	<div id="gerer-missions" data-role="page"     >
+			
+				<div data-role="navbar"  id="gerer-missions-navbar" data-inset="false">
+					<ul data-theme="d">
+					<li><a  id="gerer-missions-canbeclosed-tab" data-theme="d" class="ui-btn-active">Contrat à cloturer</a></li>
+					<li><a  id="gerer-missions-avalider-tab" data-theme="d" >Mission à valider</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			<div  id="gerer-missions-canbeclosed" >	
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			<div id="gerer-missions-avalider" >
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			
+		<div  id="cloturer-contrat-dialog" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+		</div>	
+			
+	</div><!-- /gerer-missions -->
+	
+	
+	<div id="gerer-frais" data-role="page"     >
+			
+				<div data-role="navbar"  id="gerer-frais-navbar" data-inset="false">
+					<ul data-theme="d">
+					<li><a  id="gerer-frais-avalider-tab" data-theme="d" class="ui-btn-active">Frais à valider</a></li>
+					<li><a  id="gerer-frais-tous-tab" data-theme="d" >Tous les frais</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			<div  id="gerer-frais-avalider" >	
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			<div id="gerer-frais-tous" >
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			
+	</div><!-- /gérer les frais -->
+
+	<!-- dialog pour afficher les erreur -->		
+	<div  id="error-dialog" data-theme="f" data-role="page" data-close-btn="none">
+				
+	</div>
+	
+	<!-- page affichage Frais -->
+	<div  id="frais" data-theme="d" data-role="page" style="width: 100%"  data-overlay-theme="a" >
+		<div data-role="header" data-theme="d" >
+			 <div style="text-align: center;padding: 0.6em;"> <span id="frais-header-title">Consulter une note de frais</span> </div>
+			 <a id ="demande-back" onclick="back(true)"data-icon="back" data-iconpos="notext" data-role="button" data-theme="d" >retour</a>
+		</div><!-- /header --> 
+		<div data-role="content" id="frais-content" style="padding-left: 0px; padding-right: 0px">
+			
+						
+		</div>	<!--/ content -->
+		
+		<!-- popus -->
+		<div  id="valider-frais-dialog"  data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+				
+		</div>
+		<div  id="refuser-frais-dialog" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+			
+		</div>
+	
+	</div><!-- / Frais -->
+	
+	<!-- page affichage projet -->
+	<div  id="project" data-theme="d" data-role="page" style="width: 100%"  data-overlay-theme="a" >
+		<div data-role="header" data-theme="d" >
+			 <div style="text-align: center;padding: 0.6em;"> <span id="project-header-title">Consultation mission </span> </div>
+			 <a id ="project-back" onclick="back(true)"data-icon="back" data-iconpos="notext" data-role="button" data-theme="d" >retour</a>
+			 <a id="show-mission-workflow-panel" href="#mission-workflow" data-icon="grid" data-iconpos="notext" class="ui-icon-alt">Workflow</a>
+		</div><!-- /header --> 
+		<div data-role="content" id="project-content" style="padding-left: 0.2em; padding-right: 0.2em;">
+			
+						
+		</div>	<!--/ content -->
+		
+		<!-- popus -->
+		<div  id="dialog-valider-mission" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+				
+		</div>
+		<div  id="dialog-refuser-mission" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+			
+		</div>
+		
+		<div id="mission-workflow" data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay"  data-theme="d">
+		
+		</div>
+	
+	</div><!-- /Projet -->
+	
+	<!-- gérer les cras -->
+	<div id="gerer-cras" data-role="page"    style="padding:0px" >
+		<ul data-theme="d" data-role="listview" data-inset="false" style="margin-top: -10px; margin-bottom: -10px">
+			<li style="text-align: center; color:#045680">CRA(s) à valider</li>
+		</ul>
+		<div id="list-cra-a-valider" ><p style="text-align:center"> chargement...</p></div>
+	</div><!-- /gérer les frais -->
+	
+	<!-- page affichage cra -->
+	<div  id="cra" data-theme="d" data-role="page" style="width: 100%"  data-overlay-theme="a" >
+		<div data-role="header" data-theme="d" >
+			 <div style="text-align: center;padding: 0.6em;"> <span id="cara-header-title">Consultation CRA </span> </div>
+			 <a id ="cra-back" onclick="back(true)"data-icon="back" data-iconpos="notext" data-role="button" data-theme="d" >retour</a>
+			 <a id="show-cra-workflow-panel" href="#cra-workflow" data-icon="grid" data-iconpos="notext" class="ui-icon-alt">Workflow</a>
+		</div><!-- /header --> 
+		<div data-role="content" id="cra-content" style="padding-left: 0.2em; padding-right: 0.2em;">
+		
+			
+						
+		</div>	<!--/ content -->
+		
+		<!-- popus -->
+		<div  id="dialog-valider-cra" class="dialog" data-dismissible="false" data-theme="d" data-role="popup" data-overlay-theme="a" >
+				
+		</div>
+		<div  id="dialog-refuser-cra" class="dialog" data-dismissible="false" data-theme="d" data-role="popup" data-overlay-theme="a" >
+			
+		</div>
+		
+		<div id="cra-workflow" data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay"  data-theme="d">
+		
+		</div>
+	</div><!-- /cra -->
+	
+	<div id="gerer-facture" data-role="page"     >
+			
+				<div data-role="navbar"  id="gerer-facture-navbar" data-inset="false">
+					<ul data-theme="d">
+					<li><a  id="gerer-facture-avalider-tab" data-theme="d" class="ui-btn-active">Facture</a></li>
+					<li><a  id="gerer-proforma-avalider-tab" data-theme="d" >Proforma</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			<div  id="gerer-facture-avalider" >	
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			<div id="gerer-proforma-avalider" >
+				<p style="text-align:center"> chargement...</p>
+			</div>
+			
+	</div><!-- /gérer les frais -->
+	
+	<!-- page affichage facture -->
+	<div  id="facture" data-theme="d" data-role="page" style="width: 100%"  data-overlay-theme="a" >
+		<div data-role="header" data-theme="d" >
+			 <div style="text-align: center;padding: 0.6em;"> <span id="project-header-title">Consultation facture </span> </div>
+			 <a id ="facture-back" onclick="back(true)"data-icon="back" data-iconpos="notext" data-role="button" data-theme="d" >retour</a>
+			 <a id="show-facture-workflow-panel" href="#facture-workflow" data-icon="grid" data-iconpos="notext" class="ui-icon-alt">Workflow</a>
+		</div><!-- /header --> 
+		<div data-role="content" id="facture-content" style="padding-left: 0.2em; padding-right: 0.2em;">
+			
+						
+		</div>	<!--/ content -->
+		
+		<!-- popus -->
+		<div  id="dialog-valider-facture"  data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+				
+		</div>
+		<div  id="dialog-refuser-facture" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+			
+		</div>
+		
+		<div id="facture-workflow" data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay"  data-theme="d">
+		
+		</div>
+	
+	</div><!-- /Facture -->
+
+	<!-- cloturer mois de facturation -->
+	<div  id="cloturer-mois" data-theme="d" data-role="page" style="width: 100%"  data-overlay-theme="a" >
+		<div data-role="header" data-theme="d" >
+			 <div style="text-align: center;padding: 0.6em;"> <span id="project-header-title">Clôturer un mois de facturation </span> </div>
+			 <a id ="cloturer-back" onclick="back(true)"data-icon="back" data-iconpos="notext" data-role="button" data-theme="d" >retour</a>
+		</div><!-- /header --> 
+		<div data-role="content" id="cloturer-mois-content" style="padding-left: 0.2em; padding-right: 0.2em;">
+			<label for="select-month" class="select">Mois à clôturer</label>
+			<select name="select-month" id="select-month">
+				<option value="1">Février 2011</option>
+				<option value="2">Mars 2011</option>
+				<option value="3">Avril 2011</option>
+				<option value="4">May 2011</option>
+				<option value="5">Juin 2011</option>
+				<option value="6">Juillet 2011</option>
+			</select>
+			<label for="date">Date de clôture:</label>
+			<input type="date" name="date" id="date" value="25/05/2013">
+			<a href="#/dialog-valider-cloturer" data-role="button" data-theme="g" data-rel="popup"  data-transition="pop"> Clôturer </a>
+						
+		</div>	<!--/ content -->
+		
+		<!-- popus -->
+		<div  id="dialog-valider-cloturer" data-dismissible="false" class="dialog" data-theme="d" data-role="popup" data-overlay-theme="a" >
+				
+		</div>
+
+		
+		</div>
+	
+	</div><!-- /cloturer -->
+	
+
+	<div id="message" class="message-box ">
+		<div><h4 id="message-text"> Opération effectuée avec succès </h4><div>
+	</div>	
+	
+  </body>
+</html>

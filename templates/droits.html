@@ -1,0 +1,19 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true" >
+
+    <ion-content has-header="true" padding="true" >
+		<div ng-controller="ResourcesAdminCtrl">
+			<ion-list>
+				<ion-item ng-click="aller(task.link)" class="task item-icon-left item-icon-right" ng-repeat="task in customers">
+				<i ng-class="task.iconClass"></i>
+					{{task.name}}
+				</ion-item>
+				
+			</ion-list>
+		</div>
+    </ion-content>
+</ion-view>
+
+
+					
+					

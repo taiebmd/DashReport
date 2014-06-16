@@ -1,0 +1,30 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+      hide-back-button="true">
+
+    <ion-content has-header="true" padding="true">
+
+        <div ng-controller="ZoomCtrl">
+            <select ng-model="selectedBu" ng-options="item as item.label for item in allBu">
+                <option value="">Select BU</option>
+                </select>
+            <button class="button button-small button-calm" ng-click="showConfirm()">Confirm</button>
+
+            <nvd3-pie-chart
+                    data="test"
+                    id="exampleId"
+                    x="xFunction()"
+                    y="yFunction()"
+                    z="descriptionFunction()"
+                    showLegend="true"
+                    showLabels="true"
+                    pieLabelsOutside="false"
+                    showValues="true"
+                    labelType="percent">
+                <svg></svg>
+            </nvd3-pie-chart>
+
+        </div>
+
+    </ion-content>
+
+</ion-view>

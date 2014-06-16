@@ -1,0 +1,21 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+hide-back-button="true">
+
+	<ion-content has-header="true" padding="true">
+		<div ng-controller="trialController">
+			<div class="list">
+
+				<a ng-click="go(task)" class="item item-icon-left" ng-repeat="task in essai" ng-model="task"> <i class="icon ion-person"></i> <h3> {{task.firstName}} {{task.lastName}}</h3>
+				<p>
+					{{task.profil}} "{{task.qualification}}"
+				</p> <!--   <p> Experience:{{task.experienceTotal}}</p>-->
+				<p>
+					Date d'essai:{{task.dateEssai}}
+				</p> </a>
+
+			</div>
+
+		</div>
+	</ion-content>
+
+</ion-view>

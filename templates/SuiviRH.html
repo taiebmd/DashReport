@@ -1,0 +1,72 @@
+<ion-view title="navTitle" hide-back-button="true" left-buttons="leftButtons" right-buttons="rightButtons"
+hide-back-button="true" >
+	<div class="section" ng-controller="SuiviRHController">
+		<select id="bu" ng-model="selectedBu" ng-options="item as item.label for item in allBu" ng-click="buChanged()">
+			<option value="">Select BU</option>
+		</select>
+		<select id="soc" ng-model="SelectedSoc">
+			<option value="">TALAN SAS</option>
+			<option value="">ASSET APLHA</option>
+		</select>
+
+		<select id="mang" ng-model="SelectedManag" ng-options="item as item.firstAndLastName for item in customers">
+			<option value="">Select Manager</option>
+		</select>
+
+		<label id="date" class="item item-input"> <span class="input-label" name='dateFin'>Date Début</span>
+			<input ng-model="dateFin" type="date">
+		</label>
+		<label id="dat" class="item item-input" > <span class="input-label"  name='dateDeb'>Date Fin</span>
+			<input ng-model="dateDeb" type="date">
+		</label>
+		<button id="confirm" class="button icon-right ion-chevron-right button-small button-calm" ng-click="showConfirm()">
+			Valider
+		</button>
+
+		<div class="list">
+
+			<a ng-click="go(task)" class="item item-icon-left" ng-repeat="task in sorti"> <i class="icon ion-person"></i> <h3> {{task.firstName}} {{task.lastName}}</h3>
+			<p>
+				"Qualif:{{task.qualification}}". Exp:{{task.experienceTotal}}.
+			</p>
+			<p>
+				Date d'embauche: {{task.dateEmbauche}}
+			</p> </a>
+
+		</div>
+
+	</div>
+</ion-view>
+
+<style>
+	#bu {
+		margin-top: 2px;
+		display: inline-block;
+		clear: both;
+	}
+
+	#soc {
+		margin-top: 2px;
+		display: inline-block;
+	}
+	#mang {
+		margin-top: 2px;
+		width: 200px;
+	}
+	#date {
+		margin-top: 1px;
+		display: inline-block;
+		height: 60px;
+		with: 150px;
+	}
+	#dat {
+		margin-top: 1px;
+		display: inline-block;
+		height: 60px;
+		with: 150px;
+	}
+	#confirm {
+		margin-left: 30px;
+		margin-top: 20px;
+	}
+</style>
